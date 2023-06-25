@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="box" id="app">
+        <div class="uuu">
+                
+        </div>
+        <div class="connect">  
+            <div class="outer"> 
+              <div class="inner">
+                <div class="act">
+                 
+
+                </div>
+              </div>   
+            </div>
+        </div>
+        <h1 class="mz">最佳损友-陈奕迅</h1>
+        <div class="main-box">
+            <div class="word">
+               
+
+               
+            </div>
+        </div>
+        <!-- 其他 -->
+        
+        <div class="mark-image">
+
+        </div>
+        <div class="over-lay"></div>
+        <div class="loading-box">
+          <div>
+            <img src="images/C34B86F7465DE169108B56522C9C2900.png" alt="">
+            <p> 小主 正在加载中稍等...</p>
+          </div>
+        </div>
+        <audio src="" id="audiobox" preload="metadata"></audio>
+    </div>
+    <!-- IMPORT JS -->
+    <script>
+          (function () {
+            const app = document.querySelector('#app'),
+                HTML = document.documentElement
+            const computed = function computed() {
+                let orien = Math.abs(window.orientation)
+                if (+orien === 90) {
+                    alert('请切换到竖屏')
+                    app.style.display = 'none'
+                    return
+                }
+                //当前是竖屏
+                app.style.display = 'block'
+                //计算rem的换算比例
+                let deviceW = HTML.clientWidth,
+                    designW = 375,
+                    initialRatio = 100
+                if (deviceW > 540) deviceW = 540
+                let currentRatio = deviceW / designW * initialRatio
+                HTML.style.fontSize = currentRatio + 'px'
+
+            }
+            computed()
+            //基于resize代替 orientationchange事件 这样可以适配模拟器中，设备切换场景  
+
+            window.addEventListener('resize', computed)
+        })()
+    </script>
+    <script src="js/API.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
