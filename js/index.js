@@ -108,7 +108,7 @@ FastClick.attach(document.body);
 
   }
 
-  box.addEventListener('click', function (ev) {
+  audioBox.addEventListener('click', function (ev) {
     if (audioBox.paused) {
       //当前是暂停的 让其播放
       audioBox.play()
